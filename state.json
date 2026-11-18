@@ -1,133 +1,388 @@
 {
- "lastRun": "2026-11-18T03:31:12+00:00",
+ "lastRun": "2026-11-18T03:35:33+00:00",
+ "open": {},
  "seen": {
   "MJR54VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJR64VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJR74VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJR84VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJR94VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRC4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRD4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRE4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRF4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRG4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRH4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRJ4VC/A": {
-   "R209": "available",
-   "R301": "unavailable"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "unavailable",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRK4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRL4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRM4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJRN4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJX54VC/A": {
-   "R209": "unavailable",
-   "R301": "available"
+   "R209": {
+    "d": "unavailable",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJX64VC/A": {
-   "R209": "unavailable",
-   "R301": "available"
+   "R209": {
+    "d": "unavailable",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJX74VC/A": {
-   "R209": "unavailable",
-   "R301": "unavailable"
+   "R209": {
+    "d": "unavailable",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "unavailable",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJX84VC/A": {
-   "R209": "unavailable",
-   "R301": "available"
+   "R209": {
+    "d": "unavailable",
+    "q": "Currently unavailable"
+   },
+   "R301": {
+    "d": "available",
+    "q": "Available Tomorrow"
+   }
   },
   "MJX94VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXA4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXC4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXD4VC/A": {
-   "R209": "unavailable",
-   "R301": "available"
+   "R209": {
+    "d": "unavailable",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXE4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXF4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXG4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXH4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXJ4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXK4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXL4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   },
   "MJXM4VC/A": {
-   "R209": "available",
-   "R301": "available"
+   "R209": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   },
+   "R301": {
+    "d": "available",
+    "legacy": true,
+    "q": ""
+   }
   }
  }
 }

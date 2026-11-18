@@ -37,8 +37,13 @@ h1 em{font-style:normal;box-shadow:inset 0 -.28em var(--mint)}
 .st.ok{background:var(--mint-soft);color:var(--ok)}.st.bad{background:#f4f4f5;color:var(--bad)}.st.warn{background:#fffbeb;color:#b45309}
 .card .buy{display:inline-block;margin:16px 10px 0 0;background:#0a0a0a;color:#fff;padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none}
 .card .buy:hover{transform:translateY(-1px)}
-.card a.store{display:inline-block;margin-top:16px;color:var(--meta);font-size:13px;text-decoration:none}
-.card a.store:hover{color:var(--ink)}
+.card a.store{display:inline-block;margin:16px 0 0;border:1px solid var(--line);color:var(--ink);background:#fff;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none}
+.card a.store:hover{border-color:#0a0a0a}
+.hist{margin-top:14px}
+.hist .row{padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
+.hist .row:last-child{border-bottom:0}
+.hist .row b{font-weight:600}
+.hist .w{color:var(--meta);font-size:12px;margin-top:3px}
 footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--meta);font-size:13px;line-height:1.7;opacity:0;animation:up .6s ease .5s forwards}
 footer b{color:var(--ink);font-weight:600}
 @keyframes up{to{opacity:1;transform:none}}
@@ -51,6 +56,7 @@ footer b{color:var(--ink);font-weight:600}
   <p class="lede">One phone, two Apple Stores, checked every few minutes: <b>Chinook Centre</b> and <b>Market Mall</b>. When either one flips from sold out to available, a push lands on your phone over ntfy.</p>
   <div class="updated" id="updated">loading…</div>
   <div class="grid" id="grid"></div>
+  <div class="card hist" id="hist" style="opacity:0;transform:translateY(8px);animation:up .6s ease .45s forwards"></div>
   <footer>
     <b>How this stays free:</b> a scheduled job on GitHub checks Apple Canada's own pickup feed every few minutes, writes the results here, and pushes an <b>ntfy</b> alert the moment the 256GB Glacier Pro Max goes from sold out to available at either store. No accounts, no tracking, no cost.<br>
     Data comes straight from apple.com/ca and is refreshed every few minutes — always confirm on Apple's page before heading out. Not affiliated with Apple Inc.
@@ -64,6 +70,7 @@ async function load(){
     const r = await fetch("data.json?t="+Date.now(), {cache:"no-store"});
     const j = await r.json();
     data.items=j.items; data.updated=j.updated; data.stores=j.stores; data.ok=j.ok||[];
+    data.history=j.history||{}; data.lastStock=j.lastStock||{};
     render();
   }catch(e){ document.getElementById("updated").textContent = "couldn't load data.json"; }
 }
@@ -74,7 +81,8 @@ function render(){
     const item = data.items.find(i => i.model==="iPhone 18 Pro Max");
     const st = item && (item.stores||{})[code];
     const alive = data.ok.includes(code);
-    const cls = st && st.display==="available" && alive ? "ok" : (alive ? "bad" : "warn");
+    const tomorrow = st && st.display==="available" && /tomorrow/i.test(st.quote||"");
+    const cls = st && st.display==="available" && alive ? (tomorrow ? "warn" : "ok") : (alive ? "bad" : "warn");
     const txt = !st ? "check pending" : st.display==="available" ? (st.quote||"Available") : st.display==="unavailable" ? "Sold out" : "Unknown";
     const card = document.createElement("div"); card.className="card";
     card.style.animationDelay = (Math.random()*0.3+0.35).toFixed(2)+"s";
@@ -85,6 +93,18 @@ function render(){
       <a class="store" href="https://www.apple.com/ca/retail/${info.slug}/" target="_blank" rel="noopener">Store page</a>`;
     grid.appendChild(card);
   }
+  const hist = document.getElementById("hist");
+  const wins = (data.history.windows||[]).slice().reverse();
+  const lastS = data.lastStock;
+  const fmtT = ts => new Date(ts).toLocaleString("en-CA",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZone:"America/Edmonton"});
+  let rows = "";
+  for(const [code, info] of Object.entries(data.stores)){
+    const ls = lastS[code] ? "last in stock "+fmtT(lastS[code]) : "no pickup stock seen yet";
+    const w = wins.filter(x=>x.store===code).slice(0,4).map(x=>fmtT(x.start)+" → "+fmtT(x.end)+" · "+(x.minutes<1?"under a min":x.minutes+" min")).join(" · ");
+    rows += `<div class="row"><b>${info.name}</b> — ${ls}${w?`<div class="w">${w}</div>`:""}</div>`;
+  }
+  if(!wins.length) rows += `<div class="w">No restocks logged yet. Every status change is recorded from here on, so you'll see how long pickup windows usually last.</div>`;
+  hist.innerHTML = `<h2>Restock history</h2><div class="addr">how long pickup windows actually last at each store</div>` + rows;
   const t = data.updated ? new Date(data.updated) : null;
   document.getElementById("updated").textContent = t
     ? "checked " + t.toLocaleTimeString("en-CA",{hour:"numeric",minute:"2-digit",timeZone:"America/Edmonton"}) + " MT"
