@@ -27,6 +27,10 @@ PARTS = {
 }
 PART_META = {p: (m, s, c) for m, ss in PARTS.items() for s, cc in ss.items() for c, p in cc.items()}
 ALERT_MODELS = {"iPhone 18 Pro Max"}
+BUY_URL = "https://www.apple.com/ca/shop/buy-iphone/iphone-18-pro?partNumber={}"
+
+def buy_link(part):
+    return BUY_URL.format(urllib.request.quote(part, safe=""))
 NTFY = os.environ.get("NTFY_TOPIC", "").strip()
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -106,7 +110,7 @@ def main():
             if disp == "available" and prev != "available":
                 seen[part][store] = "available"
                 if model in ALERT_MODELS:
-                    alerts.append((model, color, size, store, info["quote"]))
+                    alerts.append((model, color, size, part, store, info["quote"]))
             elif disp in ("unavailable", "ineligible"):
                 seen[part][store] = disp
             # unknown/error statuses are left untouched: a failed check must
@@ -114,11 +118,12 @@ def main():
 
     if alerts:
         by_store = {}
-        for a in alerts: by_store.setdefault(a[3], []).append(a)
+        for a in alerts: by_store.setdefault(a[4], []).append(a)
         for store, items in by_store.items():
             lines = []
-            for model, color, size, _, quote in items:
+            for model, color, size, part, _, quote in items:
                 lines.append(f"iPhone {model.replace('iPhone ', '')} {size} {color} — {quote}")
+                lines.append(f"Buy: {buy_link(part)}")
             lines.append("")
             lines.append(f"{STORES[store]['name']}, {STORES[store]['city']}")
             lines.append(f"https://www.apple.com/ca/retail/{STORES[store]['slug']}/")
