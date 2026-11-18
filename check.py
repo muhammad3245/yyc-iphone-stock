@@ -130,11 +130,9 @@ def main():
 
     # data.json for the site
     grid = []
-    for model, sizes in PARTS.items():
-        for size in STORAGE:
-            for color in COLORS:
-                part = sizes[size][color]
-                grid.append({
+    for part in all_parts:
+        model, size, color = PART_META[part]
+        grid.append({
                     "part": part, "model": model, "size": size, "color": color,
                     "stores": {s: ({"display": results[s][part]["display"], "quote": results[s][part]["quote"]}
                                if part in results[s] else {"display": "unknown", "quote": ""}) for s in results},
