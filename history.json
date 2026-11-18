@@ -17,6 +17,15 @@
    "from": "out",
    "to": "stock",
    "quote": "Available Today"
+  },
+  {
+   "ts": "2026-11-18T20:33:57+00:00",
+   "store": "R209",
+   "storeName": "Apple Chinook Centre",
+   "label": "iPhone 18 Pro Max 256GB Glacier",
+   "from": "out",
+   "to": "stock",
+   "quote": "Available Today"
   }
  ],
  "windows": []
