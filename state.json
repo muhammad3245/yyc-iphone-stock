@@ -1,5 +1,5 @@
 {
- "lastRun": "2026-11-18T02:41:47+00:00",
+ "lastRun": "2026-11-18T03:31:12+00:00",
  "seen": {
   "MJR54VC/A": {
    "R209": "available",
@@ -79,7 +79,7 @@
   },
   "MJX84VC/A": {
    "R209": "unavailable",
-   "R301": "unavailable"
+   "R301": "available"
   },
   "MJX94VC/A": {
    "R209": "available",

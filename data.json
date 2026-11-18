@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T02:41:47+00:00",
+ "updated": "2026-11-18T03:31:12+00:00",
  "ok": [
   "R209",
   "R301"
@@ -31,11 +31,20 @@
      "quote": "Currently unavailable"
     },
     "R301": {
-     "display": "unavailable",
-     "quote": "Currently unavailable"
+     "display": "available",
+     "quote": "Available Tomorrow"
     }
    }
   }
  ],
- "freshAlerts": []
+ "freshAlerts": [
+  [
+   "iPhone 18 Pro Max",
+   "Glacier",
+   "256GB",
+   "MJX84VC/A",
+   "R301",
+   "Available Tomorrow"
+  ]
+ ]
 }
