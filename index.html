@@ -67,6 +67,10 @@ const GLACIER = "#cfe6ee";
 const data = {items:[], updated:null, stores:{}, ok:[]};
 async function load(){
   try{
+    const w = await fetch("https://iphone-stock-checker.hussnain-checker.workers.dev/data?t="+Date.now(), {cache:"no-store"});
+    if (w.ok) { const j = await w.json(); data.items=j.items; data.updated=j.updated; data.stores=j.stores; data.ok=j.ok||[]; data.history=j.history||{}; data.lastStock=j.lastStock||{}; render(); return; }
+  }catch(e){}
+  try{
     const r = await fetch("data.json?t="+Date.now(), {cache:"no-store"});
     const j = await r.json();
     data.items=j.items; data.updated=j.updated; data.stores=j.stores; data.ok=j.ok||[];
