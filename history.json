@@ -1,4 +1,14 @@
 {
- "events": [],
+ "events": [
+  {
+   "ts": "2026-11-18T10:14:41+00:00",
+   "store": "R301",
+   "storeName": "Apple Market Mall",
+   "label": "iPhone 18 Pro Max 256GB Glacier",
+   "from": "tomorrow",
+   "to": "out",
+   "quote": "Currently unavailable"
+  }
+ ],
  "windows": []
 }
