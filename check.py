@@ -27,7 +27,7 @@ PARTS = {
 }
 PART_META = {p: (m, s, c) for m, ss in PARTS.items() for s, cc in ss.items() for c, p in cc.items()}
 ALERT_MODELS = {"iPhone 18 Pro Max"}
-BUY_URL = "https://www.apple.com/ca/shop/buy-iphone/iphone-18-pro?partNumber={}"
+BUY_URL = "https://www.apple.com/ca/shop/buy-iphone/iphone-18-pro/6.9-inch-display-256gb-glacier?partNumber={}"
 
 def buy_link(part):
     return BUY_URL.format(urllib.request.quote(part, safe=""))

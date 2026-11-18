@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T02:20:14+00:00",
+ "updated": "2026-11-18T02:41:11+00:00",
  "ok": [
   "R209",
   "R301"
@@ -31,8 +31,8 @@
      "quote": "Currently unavailable"
     },
     "R301": {
-     "display": "available",
-     "quote": "Available Tomorrow"
+     "display": "unavailable",
+     "quote": "Currently unavailable"
     }
    }
   }
