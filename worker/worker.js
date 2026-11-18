@@ -34,11 +34,19 @@ async function fetchStore(store) {
 async function notify(env, title, lines, priority, tags) {
   const body = lines.join("\n");
   try {
+    // new topic plus the old one so nothing is missed while switching apps
     await fetch("https://ntfy.sh/" + env.NTFY_TOPIC, {
       method: "POST", body,
       headers: { "Title": title, "Priority": priority, "Tags": tags },
     });
     console.log("ntfy sent:", title);
+    try {
+      await fetch("https://ntfy.sh/yycCalgaryiphone18pmstockcheckerglacier", {
+        method: "POST", body,
+        headers: { "Title": title + " (old topic)", "Priority": priority, "Tags": tags },
+      });
+      console.log("ntfy sent (legacy topic):", title);
+    } catch (e) { console.log("WARN legacy ntfy failed:", e.message); }
   } catch (e) { console.log("WARN ntfy failed:", e.message); }
   if (env.RESEND_API_KEY && env.EMAIL_TO) {
     try {
@@ -123,9 +131,17 @@ async function check(env) {
     lastStock,
     history: { events: history.events.slice(-60), windows: history.windows.slice(-20) },
   };
-  await env.STOCK.put("state", JSON.stringify(state));
-  await env.STOCK.put("history", JSON.stringify(history));
-  await env.STOCK.put("snapshot", JSON.stringify(snapshot));
+  // Write only when something changed, or every 5 minutes to refresh the
+  // "last checked" stamp. Keeps KV writes far under the free-plan daily cap.
+  const prev = await env.STOCK.get("snapshot", "json");
+  const core = (o) => { if (!o) return ""; const { updated, ...r } = o; return JSON.stringify(r); };
+  const changed = core(prev) !== core(snapshot);
+  const age = prev ? Date.now() - Date.parse(prev.updated) : Infinity;
+  if (changed || age > 5 * 60 * 1000) {
+    await env.STOCK.put("state", JSON.stringify(state));
+    await env.STOCK.put("history", JSON.stringify(history));
+    await env.STOCK.put("snapshot", JSON.stringify(snapshot));
+  }
   console.log("done", now, "alerts:", alerts.length, "leads:", leads.length);
 }
 
