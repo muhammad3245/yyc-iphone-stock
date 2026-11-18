@@ -3,69 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>YYC iPhone Stock — iPhone 18 Pro Max pickup at Chinook Centre & Market Mall</title>
-<meta name="description" content="Free real-time iPhone 18 Pro and Pro Max pickup availability for Apple Chinook Centre and Apple Market Mall, Calgary. Auto ntfy alerts when anything restocks.">
+<title>YYC iPhone Stock — iPhone 18 Pro Max 256GB Glacier at Chinook Centre & Market Mall</title>
+<meta name="description" content="Free real-time pickup availability for the iPhone 18 Pro Max 256GB Glacier at Apple Chinook Centre and Apple Market Mall, Calgary. Auto ntfy alerts when it restocks.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='black'/><rect x='10' y='10' width='4' height='4' fill='#6ee7b7'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#ffffff; --ink:#0a0a0a; --meta:#6b7280; --line:#e5e7eb;
-  --mint:#6ee7b7; --mint-soft:#ecfdf5; --ok:#059669; --warn:#b45309; --bad:#9ca3af;
-}
+:root{--ink:#0a0a0a;--meta:#6b7280;--line:#e5e7eb;--mint:#6ee7b7;--mint-soft:#ecfdf5;--ok:#059669;--bad:#9ca3af}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
 body{
-  background:var(--bg); color:var(--ink);
-  font-family:Inter,system-ui,sans-serif; -webkit-font-smoothing:antialiased;
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size:56px 56px; background-position:-1px -1px;
-  animation:fadebg .8s ease both;
+  background:#fff;color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;background-position:-1px -1px;animation:fadein .8s ease both
 }
-@keyframes fadebg{from{opacity:0}to{opacity:1}}
-.wrap{max-width:880px;margin:0 auto;padding:48px 20px 80px}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.wrap{max-width:760px;margin:0 auto;padding:48px 20px 80px}
 .badge-row{display:flex;align-items:center;gap:10px;margin-bottom:18px;opacity:0;animation:up .5s ease .05s forwards}
-.sq{width:12px;height:12px;background:#0a0a0a;display:inline-block}
-.sq.mint{background:var(--mint)}
+.sq{width:12px;height:12px;background:#0a0a0a;display:inline-block}.sq.mint{background:var(--mint)}
 .badge-row .meta{color:var(--meta);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-h1{
-  font-family:Poppins,sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.02em;
-  font-size:clamp(2.2rem,6vw,3.6rem);opacity:0;animation:up .6s ease .1s forwards
-}
-h1 em{font-style:normal;color:#0a0a0a;box-shadow:inset 0 -.28em var(--mint)}
+h1{font-family:Poppins,sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.02em;font-size:clamp(2rem,5.5vw,3.2rem);opacity:0;animation:up .6s ease .1s forwards}
+h1 em{font-style:normal;box-shadow:inset 0 -.28em var(--mint)}
 .lede{margin-top:14px;color:var(--meta);font-size:15px;max-width:560px;opacity:0;animation:up .6s ease .18s forwards}
-.bar{margin:28px 0 10px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;opacity:0;animation:up .6s ease .26s forwards}
-.pill{
-  border:1px solid var(--ink);background:#fff;border-radius:999px;padding:8px 16px;
-  font-size:13px;font-weight:600;cursor:pointer;transition:all .15s ease
-}
-.pill:hover{transform:translateY(-1px)}
-.pill.on{background:#0a0a0a;color:#fff}
-.pill .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;background:var(--bad)}
-.pill .dot.live{background:var(--ok)}
-.updated{color:var(--meta);font-size:13px;margin-left:auto}
-.store-head{display:flex;gap:8px;align-items:baseline;margin:26px 0 10px;opacity:0;animation:up .6s ease .34s forwards}
-.store-head h2{font-family:Poppins,sans-serif;font-size:20px;font-weight:600}
-.store-head a{color:var(--meta);font-size:13px;text-decoration:none}
-.store-head a:hover{color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-@media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
-.card{
-  background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;
-  opacity:0;transform:translateY(8px);animation:up .5s ease forwards;
-  transition:box-shadow .15s ease, transform .15s ease
-}
+.lede b{color:var(--ink);font-weight:600}
+.updated{color:var(--meta);font-size:13px;margin:22px 0 14px;opacity:0;animation:up .6s ease .26s forwards}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;opacity:0;transform:translateY(8px);animation:up .5s ease forwards;transition:box-shadow .15s ease,transform .15s ease}
 .card:hover{box-shadow:0 6px 24px rgba(0,0,0,.07);transform:translateY(-2px)}
-.card .size{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--meta);margin-bottom:8px}
-.swatch{width:14px;height:14px;border-radius:4px;display:inline-block;vertical-align:-2px;margin-right:7px;border:1px solid rgba(0,0,0,.12)}
-.card .color{font-weight:600;font-size:14px}
-.st{margin-top:10px;display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px}
-.st.ok{background:var(--mint-soft);color:var(--ok)}
-.st.bad{background:#f4f4f5;color:var(--bad)}
-.st.warn{background:#fffbeb;color:var(--warn)}
+.card h2{font-family:Poppins,sans-serif;font-size:18px;font-weight:600;margin-bottom:2px}
+.card .addr{color:var(--meta);font-size:13px;margin-bottom:14px}
+.card .st{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px}
+.st.ok{background:var(--mint-soft);color:var(--ok)}.st.bad{background:#f4f4f5;color:var(--bad)}.st.warn{background:#fffbeb;color:#b45309}
+.card a{display:inline-block;margin-top:14px;color:var(--meta);font-size:13px;text-decoration:none}
+.card a:hover{color:var(--ink)}
 footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--meta);font-size:13px;line-height:1.7;opacity:0;animation:up .6s ease .5s forwards}
 footer b{color:var(--ink);font-weight:600}
 @keyframes up{to{opacity:1;transform:none}}
@@ -74,89 +45,48 @@ footer b{color:var(--ink);font-weight:600}
 <body>
 <div class="wrap">
   <div class="badge-row"><span class="sq"></span><span class="sq mint"></span><span class="meta">YYC iPhone Stock · free &amp; open source</span></div>
-  <h1>iPhone 18 Pro Max pickup in <em>Calgary</em>, live.</h1>
-  <p class="lede">Chinook Centre and Market Mall, every colour and storage, checked around the clock. A push lands on your phone the second anything restocks.</p>
-
-  <div class="bar" id="bar">
-    <button class="pill" data-model="iPhone 18 Pro Max">Pro Max</button>
-    <button class="pill" data-model="iPhone 18 Pro">Pro</button>
-    <span style="width:6px"></span>
-    <button class="pill" data-store="both">Both stores</button>
-    <button class="pill" data-store="R209">Chinook Centre</button>
-    <button class="pill" data-store="R301">Market Mall</button>
-    <span class="updated" id="updated">loading…</span>
-  </div>
-
-  <div id="panels"></div>
-
+  <h1>iPhone 18 Pro Max 256GB Glacier, <em>Calgary</em>.</h1>
+  <p class="lede">One phone, two Apple Stores, checked every few minutes: <b>Chinook Centre</b> and <b>Market Mall</b>. When either one flips from sold out to available, a push lands on your phone over ntfy.</p>
+  <div class="updated" id="updated">loading…</div>
+  <div class="grid" id="grid"></div>
   <footer>
-    <b>How this stays free:</b> a scheduled job on GitHub checks Apple Canada's own pickup feed every few minutes, writes the results here, and pushes an <b>ntfy</b> alert the moment a configuration goes from sold out to available at either store. No accounts, no tracking, no cost.<br>
+    <b>How this stays free:</b> a scheduled job on GitHub checks Apple Canada's own pickup feed every few minutes, writes the results here, and pushes an <b>ntfy</b> alert the moment the 256GB Glacier Pro Max goes from sold out to available at either store. No accounts, no tracking, no cost.<br>
     Data comes straight from apple.com/ca and is refreshed every few minutes — always confirm on Apple's page before heading out. Not affiliated with Apple Inc.
   </footer>
 </div>
-
 <script>
-const COLORS = {Black:"#1c1c1e", Silver:"#d8d8dc", Glacier:"#cfe6ee", Burgundy:"#7a2230"};
+const GLACIER = "#cfe6ee";
 const data = {items:[], updated:null, stores:{}, ok:[]};
-let model = "iPhone 18 Pro Max", store = "both";
-
 async function load(){
   try{
     const r = await fetch("data.json?t="+Date.now(), {cache:"no-store"});
     const j = await r.json();
-    data.items = j.items; data.updated = j.updated; data.stores = j.stores; data.ok = j.ok||[];
+    data.items=j.items; data.updated=j.updated; data.stores=j.stores; data.ok=j.ok||[];
     render();
-  }catch(e){
-    document.getElementById("updated").textContent = "couldn't load data.json";
-  }
-}
-function dotFor(code, st){
-  return (data.ok.includes(code) && st && st.display === "available") ? "ok"
-       : (data.ok.includes(code) ? "bad" : "warn");
-}
-function statusText(st){
-  if(!st) return "check pending";
-  if(st.display === "available") return st.quote || "Available";
-  if(st.display === "unavailable") return "Sold out";
-  return "Unknown";
+  }catch(e){ document.getElementById("updated").textContent = "couldn't load data.json"; }
 }
 function render(){
-  const panel = document.getElementById("panels");
-  panel.innerHTML = "";
-  const stores = Object.entries(data.stores).filter(([c]) => store==="both" || store===c);
-  for(const [code, info] of stores){
-    const avail = data.items.filter(i => i.model===model && (data.ok.includes(code)) && (i.stores[code]?.display==="available")).length;
-    const head = document.createElement("div"); head.className="store-head";
-    head.innerHTML = `<h2>${info.name}</h2><a href="https://www.apple.com/ca/retail/${info.slug}/">${avail} available now</a>`;
-    panel.appendChild(head);
-    const grid = document.createElement("div"); grid.className="grid";
-    for(const item of data.items.filter(i => i.model===model)){
-      const st = (item.stores||{})[code];
-      const card = document.createElement("div"); card.className="card";
-      card.style.animationDelay = (Math.random()*0.25+0.35).toFixed(2)+"s";
-      const d = dotFor(code, st);
-      card.innerHTML = `<div class="size">${item.size}</div>
-        <span class="swatch" style="background:${COLORS[item.color]}"></span><span class="color">${item.color}</span>
-        <div><span class="st ${d==="ok"?"ok":d==="warn"?"warn":"bad"}">${statusText(st)}</span></div>`;
-      grid.appendChild(card);
-    }
-    panel.appendChild(grid);
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+  for(const [code, info] of Object.entries(data.stores)){
+    const item = data.items.find(i => i.model==="iPhone 18 Pro Max");
+    const st = item && (item.stores||{})[code];
+    const alive = data.ok.includes(code);
+    const cls = st && st.display==="available" && alive ? "ok" : (alive ? "bad" : "warn");
+    const txt = !st ? "check pending" : st.display==="available" ? (st.quote||"Available") : st.display==="unavailable" ? "Sold out" : "Unknown";
+    const card = document.createElement("div"); card.className="card";
+    card.style.animationDelay = (Math.random()*0.3+0.35).toFixed(2)+"s";
+    card.innerHTML = `<h2>${info.name}</h2><div class="addr">${info.city}, Alberta</div>
+      <div style="margin-bottom:14px"><span class="swatch" style="display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:7px;border:1px solid rgba(0,0,0,.12);background:${GLACIER}"></span><b style="font-size:14px">256GB · Glacier</b></div>
+      <span class="st ${cls}">${txt}</span>
+      <a href="https://www.apple.com/ca/retail/${info.slug}/" target="_blank" rel="noopener">Store page →</a>`;
+    grid.appendChild(card);
   }
   const t = data.updated ? new Date(data.updated) : null;
   document.getElementById("updated").textContent = t
-    ? "updated " + t.toLocaleTimeString("en-CA", {hour:"numeric", minute:"2-digit", timeZone:"America/Edmonton"}) + " MT"
+    ? "checked " + t.toLocaleTimeString("en-CA",{hour:"numeric",minute:"2-digit",timeZone:"America/Edmonton"}) + " MT"
     : "";
 }
-document.getElementById("bar").addEventListener("click", e=>{
-  const b = e.target.closest(".pill"); if(!b) return;
-  if(b.dataset.model){ model = b.dataset.model; }
-  else { store = b.dataset.store; }
-  document.querySelectorAll(".pill").forEach(p=>{
-    if(p.dataset.model) p.classList.toggle("on", p.dataset.model===model);
-    if(p.dataset.store) p.classList.toggle("on", p.dataset.store===store);
-  });
-  render();
-});
 load(); setInterval(load, 60000);
 </script>
 </body>

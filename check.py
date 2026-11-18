@@ -18,22 +18,15 @@ COLORS = ["Black", "Silver", "Glacier", "Burgundy"]
 STORAGE = ["256GB", "512GB", "1TB", "2TB"]
 
 # Unlocked Canada parts (apple.com/ca, suffix VC/A)
+# Track list: currently only the iPhone 18 Pro Max 256GB Glacier (MJX84VC/A).
+# To widen coverage, paste more SKU lines back in from apple.com/ca.
 PARTS = {
     "iPhone 18 Pro Max": {
-        "256GB":  {"Black": "MJX54VC/A", "Silver": "MJX64VC/A", "Glacier": "MJX84VC/A", "Burgundy": "MJX74VC/A"},
-        "512GB":  {"Black": "MJX94VC/A", "Silver": "MJXA4VC/A", "Glacier": "MJXD4VC/A", "Burgundy": "MJXC4VC/A"},
-        "1TB":    {"Black": "MJXE4VC/A", "Silver": "MJXF4VC/A", "Glacier": "MJXH4VC/A", "Burgundy": "MJXG4VC/A"},
-        "2TB":    {"Black": "MJXJ4VC/A", "Silver": "MJXK4VC/A", "Glacier": "MJXM4VC/A", "Burgundy": "MJXL4VC/A"},
-    },
-    "iPhone 18 Pro": {
-        "256GB":  {"Black": "MJR54VC/A", "Silver": "MJR64VC/A", "Glacier": "MJR84VC/A", "Burgundy": "MJR74VC/A"},
-        "512GB":  {"Black": "MJR94VC/A", "Silver": "MJRC4VC/A", "Glacier": "MJRE4VC/A", "Burgundy": "MJRD4VC/A"},
-        "1TB":    {"Black": "MJRF4VC/A", "Silver": "MJRG4VC/A", "Glacier": "MJRJ4VC/A", "Burgundy": "MJRH4VC/A"},
-        "2TB":    {"Black": "MJRK4VC/A", "Silver": "MJRL4VC/A", "Glacier": "MJRN4VC/A", "Burgundy": "MJRM4VC/A"},
+        "256GB": {"Glacier": "MJX84VC/A"},
     },
 }
 PART_META = {p: (m, s, c) for m, ss in PARTS.items() for s, cc in ss.items() for c, p in cc.items()}
-ALERT_MODELS = {"iPhone 18 Pro Max"}   # ntfy alerts; widen to include Pro by adding it here
+ALERT_MODELS = {"iPhone 18 Pro Max"}
 NTFY = os.environ.get("NTFY_TOPIC", "").strip()
 HERE = os.path.dirname(os.path.abspath(__file__))
 
