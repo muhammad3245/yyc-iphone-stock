@@ -5,4 +5,4 @@ workers_dev = true
 triggers = { crons = ["*/2 * * * *"] }
 [[kv_namespaces]]
 binding = "STOCK"
-id = "PENDING"
+id = "abf43f8ca8c6413182faac73d16bc151"
