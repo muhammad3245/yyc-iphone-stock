@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T08:38:20+00:00",
+ "updated": "2026-11-19T10:05:16+00:00",
  "ok": [
   "R209",
   "R301"
@@ -37,24 +37,7 @@
    }
   }
  ],
- "freshAlerts": [
-  [
-   "iPhone 18 Pro Max",
-   "Glacier",
-   "256GB",
-   "MJX84VC/A",
-   "R301",
-   "Available Today"
-  ],
-  [
-   "iPhone 18 Pro Max",
-   "Glacier",
-   "256GB",
-   "MJX84VC/A",
-   "R209",
-   "Available Today"
-  ]
- ],
+ "freshAlerts": [],
  "lastStock": {
   "R209": "2026-11-19T08:38:20+00:00",
   "R301": "2026-11-19T08:38:20+00:00"
