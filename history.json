@@ -26,7 +26,42 @@
    "from": "out",
    "to": "stock",
    "quote": "Available Today"
+  },
+  {
+   "ts": "2026-11-19T01:58:53+00:00",
+   "store": "R209",
+   "storeName": "Apple Chinook Centre",
+   "label": "iPhone 18 Pro Max 256GB Glacier",
+   "from": "stock",
+   "to": "tomorrow",
+   "quote": "Available Tomorrow"
+  },
+  {
+   "ts": "2026-11-19T01:58:53+00:00",
+   "store": "R301",
+   "storeName": "Apple Market Mall",
+   "label": "iPhone 18 Pro Max 256GB Glacier",
+   "from": "stock",
+   "to": "tomorrow",
+   "quote": "Available Tomorrow"
   }
  ],
- "windows": []
+ "windows": [
+  {
+   "store": "R209",
+   "storeName": "Apple Chinook Centre",
+   "label": "iPhone 18 Pro Max 256GB Glacier",
+   "start": "2026-11-18T20:33:57+00:00",
+   "end": "2026-11-19T01:58:53+00:00",
+   "minutes": 324
+  },
+  {
+   "store": "R301",
+   "storeName": "Apple Market Mall",
+   "label": "iPhone 18 Pro Max 256GB Glacier",
+   "start": "2026-11-18T18:53:35+00:00",
+   "end": "2026-11-19T01:58:53+00:00",
+   "minutes": 425
+  }
+ ]
 }
