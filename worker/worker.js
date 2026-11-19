@@ -20,15 +20,34 @@ function cat(disp, quote) {
   return "unknown";
 }
 
-async function fetchStore(store) {
+// One Apple request returns every Calgary store, so fetch both in a single call.
+// Firing the identical request twice in a row is what was getting throttled,
+// which silently dropped Market Mall out of whole runs.
+async function fetchStores() {
   const url = "https://www.apple.com/ca/shop/retail/pickup-message?pl=true&mts.0=regular&location=Calgary&parts.0=" + encodeURIComponent(PART.part);
-  const r = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!r.ok) throw new Error("apple api " + r.status);
-  const d = await r.json();
-  const s = (d.body && d.body.stores || []).find(x => x.storeNumber === store);
-  if (!s) throw new Error("store missing");
-  const info = (s.partsAvailability || {})[PART.part] || {};
-  return { display: info.pickupDisplay || "unknown", quote: info.pickupSearchQuote || "" };
+  const out = {};
+  let lastErr = null;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const r = await fetch(url, { headers: { "User-Agent": UA } });
+      if (!r.ok) throw new Error("apple api " + r.status);
+      const d = await r.json();
+      const list = (d.body && d.body.stores) || [];
+      const got = {};
+      for (const code of Object.keys(STORES)) {
+        const s = list.find(x => x.storeNumber === code);
+        if (!s) continue;
+        const info = (s.partsAvailability || {})[PART.part] || {};
+        got[code] = { display: info.pickupDisplay || "unknown", quote: info.pickupSearchQuote || "" };
+      }
+      if (Object.keys(got).length === Object.keys(STORES).length) return got;
+      lastErr = new Error("feed missing " + Object.keys(STORES).filter(c => !got[c]).join(","));
+      out = got;
+    } catch (e) { lastErr = e; }
+    if (attempt === 1) await new Promise(res => setTimeout(res, 3000));
+  }
+  if (Object.keys(out).length) { console.log("WARN partial feed:", lastErr && lastErr.message); return out; }
+  throw lastErr || new Error("apple feed failed");
 }
 
 const SITE = "https://iphone-stock-checker.hussnain-checker.workers.dev";
@@ -110,9 +129,12 @@ async function check(env) {
   const now = new Date().toISOString().slice(0, 19) + "+00:00";
   const results = {};
   const ok = [];
+  let feed = {};
+  try { feed = await fetchStores(); }
+  catch (e) { console.log("WARN apple feed failed:", e.message); }
   for (const store of Object.keys(STORES)) {
-    try { results[store] = await fetchStore(store); ok.push(store); }
-    catch (e) { console.log("WARN store", store, "failed:", e.message); }
+    if (feed[store]) { results[store] = feed[store]; ok.push(store); }
+    else console.log("WARN store", store, "missing from feed");
   }
   if (!ok.length) { console.log("all fetches failed; keeping state"); return; }
 
