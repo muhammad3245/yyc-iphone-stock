@@ -1,9 +1,7 @@
 {
- "lastRun": "2026-11-22T18:58:42+00:00",
+ "lastRun": "2026-11-22T23:20:59+00:00",
  "open": {
-  "MJX84VC/A": {
-   "R301": "2026-11-22T10:17:33+00:00"
-  }
+  "MJX84VC/A": {}
  },
  "seen": {
   "MJR54VC/A": {
@@ -241,7 +239,7 @@
    },
    "R301": {
     "d": "available",
-    "q": "Available Today"
+    "q": "Available Tomorrow"
    }
   },
   "MJX94VC/A": {
