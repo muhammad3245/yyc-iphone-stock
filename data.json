@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T01:55:07+00:00",
+ "updated": "2026-11-27T10:28:21+00:00",
  "ok": [
   "R209",
   "R301"
@@ -32,15 +32,24 @@
     },
     "R301": {
      "display": "available",
-     "quote": "Available Tomorrow"
+     "quote": "Available Today"
     }
    }
   }
  ],
- "freshAlerts": [],
+ "freshAlerts": [
+  [
+   "iPhone 18 Pro Max",
+   "Glacier",
+   "256GB",
+   "MJX84VC/A",
+   "R301",
+   "Available Today"
+  ]
+ ],
  "lastStock": {
   "R209": "2026-11-21T23:45:28+00:00",
-  "R301": "2026-11-27T01:55:07+00:00"
+  "R301": "2026-11-27T10:28:21+00:00"
  },
  "history": {
   "events": [
@@ -286,6 +295,15 @@
     "from": "stock",
     "to": "tomorrow",
     "quote": "Available Tomorrow"
+   },
+   {
+    "ts": "2026-11-27T10:28:21+00:00",
+    "store": "R301",
+    "storeName": "Apple Market Mall",
+    "label": "iPhone 18 Pro Max 256GB Glacier",
+    "from": "tomorrow",
+    "to": "stock",
+    "quote": "Available Today"
    }
   ],
   "windows": [
