@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:29:07+00:00",
+ "updated": "2026-11-28T02:08:48+00:00",
  "ok": [
   "R209",
   "R301"
@@ -32,7 +32,7 @@
     },
     "R301": {
      "display": "available",
-     "quote": "Available Today"
+     "quote": "Available Tomorrow"
     }
    }
   }
@@ -40,7 +40,7 @@
  "freshAlerts": [],
  "lastStock": {
   "R209": "2026-11-21T23:45:28+00:00",
-  "R301": "2026-11-27T10:28:21+00:00"
+  "R301": "2026-11-28T02:08:48+00:00"
  },
  "history": {
   "events": [
@@ -295,6 +295,15 @@
     "from": "tomorrow",
     "to": "stock",
     "quote": "Available Today"
+   },
+   {
+    "ts": "2026-11-28T02:08:48+00:00",
+    "store": "R301",
+    "storeName": "Apple Market Mall",
+    "label": "iPhone 18 Pro Max 256GB Glacier",
+    "from": "stock",
+    "to": "tomorrow",
+    "quote": "Available Tomorrow"
    }
   ],
   "windows": [
@@ -401,6 +410,14 @@
     "start": "2026-11-26T08:35:52+00:00",
     "end": "2026-11-27T01:55:07+00:00",
     "minutes": 1039
+   },
+   {
+    "store": "R301",
+    "storeName": "Apple Market Mall",
+    "label": "iPhone 18 Pro Max 256GB Glacier",
+    "start": "2026-11-27T10:28:21+00:00",
+    "end": "2026-11-28T02:08:48+00:00",
+    "minutes": 940
    }
   ]
  }
